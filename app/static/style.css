@@ -1,0 +1,349 @@
+/* app/static/style.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically */
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    background-color: #2b2b2b;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    width: 95%;
+    max-width: 1400px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #69f0ae;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+button#start {
+    background-color: #00c853;
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+button#start:hover {
+    background-color: #00b347;
+    transform: translateY(-2px);
+}
+
+button#start:disabled {
+    background-color: #4CAF50;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+
+#output-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.output-section {
+    background-color: #383838;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.output-section h4 {
+    color: #ffeb3b;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.output-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.output-section ul li {
+    margin-bottom: 8px;
+    color: #cccccc;
+    font-size: 0.95em;
+}
+
+#overallPrediction {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #4CAF50;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#routingDecision {
+    font-size: 1.6em;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.lane-status-cards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 15px;
+    justify-content: flex-start;
+    padding-top: 5px;
+}
+
+.lane-status-card {
+    background-color: #4a4a4a;
+    padding: 15px;
+    border-radius: 8px;
+    width: auto;
+    max-width: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #555;
+    box-sizing: border-box;
+}
+
+.lane-status-card h5 {
+    color: #cddc39;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.lane-status-card ul {
+    font-size: 0.9em;
+}
+
+hr {
+    width: 95%;
+    margin: 50px auto;
+    border: none;
+    border-top: 1px dashed #444;
+}
+
+.simulation-container {
+    padding: 20px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.simulation-container h3 {
+    color: #69f0ae;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+#simulationBox {
+    position: relative;
+    background-color: #2b2b2b;
+    border: 2px solid #555;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 250px;
+    box-shadow: 0 44px 20px rgba(0, 0, 0, 0.4);
+}
+
+.user-icon {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #383838;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.user-icon img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00c853;
+}
+
+.routes-column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 40px;
+    height: 100%;
+}
+
+.route {
+    height: 10px;
+    background-color: #555;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+}
+
+.route span {
+    position: absolute;
+    top: 50%;
+    left: -120px;
+    transform: translateY(-50%);
+    color: #e0e0e0;
+    font-size: 0.9em;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+    background-color: #383838;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0.9;
+    min-width: 110px;
+    text-align: right;
+}
+
+.route.congested {
+    background-color: #e53935;
+    box-shadow: 0 0 10px #e53935;
+}
+
+.route.optimal {
+    background-color: #00c853;
+    box-shadow: 0 0 10px #00c853;
+}
+
+#signalDot {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #00e676;
+    border-radius: 50%;
+    display: none;
+    z-index: 5;
+    box-shadow: 0 0 10px #00e676, 0 0 20px #00e676;
+}
+
+@media (max-width: 1200px) {
+    #output-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .lane-status-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .lane-status-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    #output-grid {
+        grid-template-columns: 1fr;
+    }
+    .output-section {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    button#start {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .output-section h4 {
+        font-size: 1.1em;
+    }
+    #overallPrediction, #routingDecision {
+        font-size: 1.3em;
+    }
+    .lane-status-cards {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 15px;
+    }
+    .lane-status-card {
+        width: 100%;
+    }
+    #simulationBox {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    .user-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    .routes-column {
+        margin: 20px 0;
+        width: 100%;
+    }
+    .route {
+        height: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .route span {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-bottom: 5px;
+        display: block;
+        min-width: auto;
+        top: auto;
+        left: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em;
+    }
+    .user-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .route span {
+        font-size: 0.75em;
+    }
+}

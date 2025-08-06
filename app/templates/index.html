@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Traffic Predictor & Router</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>🚦 Real-Time Traffic Predictor & Router</h2>
+    <button id="start">Start Streaming</button>
+    <div id="output-grid">
+        <div class="output-section">
+            <h4>🧠 ML Model Input Features</h4>
+            <ul id="mlInputData"></ul>
+        </div>
+    <div class="output-section">
+        <h4>📊 Overall Traffic Prediction: <span id="overallPrediction"></span></h4>
+        <h4>📨 Incoming Message</h4>
+        <ul id="incomingMessage"></ul>
+        <h4>➡️ Routing Decision: <span id="routingDecision"></span></h4>
+        <h4>✅ Message Processing Result</h4>
+        <ul id="messageProcessingResult"></ul>
+    </div>
+    <div class="output-section" id="laneStatuses">
+          <h4>🚦 Route Statuses</h4>
+        <div id="laneStatusCardsContainer" class="lane-status-cards"></div>
+      </div>
+        </div>
+    </div>
+    <div class="status-card">
+                <h2>Dropped Messages</h2>
+                <p id="dropped-messages-count">0</p>
+    </div>
+
+    <hr>
+
+    <div class="simulation-container">
+    <h3>📡 <span style="color: limegreen;">Route Optimization Simulation</span></h3>
+    <div id="simulationBox">
+            <div class="user-icon left-user">
+        <img src="/static/user1.jpg" alt="User 1" />
+      </div>
+
+            <div class="routes-column">
+        <div class="route" id="route1"><span>Route A</span></div>
+        <div class="route" id="route2"><span>Route B</span></div>
+        <div class="route" id="route3"><span>Route C</span></div>
+      </div>
+
+            <div class="user-icon right-user">
+        <img src="/static/user2.jpg" alt="User 2" />
+      </div>
+      <div id="signalDot"></div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
